@@ -1,0 +1,6 @@
+{
+"postsPerJSON":20,
+"posts": [
+    { "id": 1, "file": "001.json"}
+  ]
+}

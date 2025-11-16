@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Blog Post Maker</title>
+    <link href="./style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+        input {
+            all: unset;
+        }
+
+        .blend_in_inputfield {
+            /* i want the input field to not have the border or backgrounds, so it looks as if i was just writing  */
+            border: none;
+            background: none;
+            outline: none;
+            /* copy style of */
+        }
+        #bodyEditor{
+            /* remove styling  */
+            display:inline-block;
+            width:100%;
+            border:1px solid black;
+        }
+        .body {
+            width:100%;
+        }
+        #moodInput{
+            float:right;
+            text-align: right;
+
+        }
+        [contenteditable] {
+            /* remove default styling of contenteditable */
+            border: none;
+            background: none;
+            outline:0px solid transparent;
+        }
+        .imageInputs input{
+            border:1px solid black;
+        }
+    </style>
+    <script >
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="headerContainer">
+                <!-- title+subtitle -->
+                <!-- page settings -->
+                <div class="headerTitleContainer">
+                    <h1 id="pageTitle">Will's blog...</h1>
+                    <p>cs major. aspiring to be something more</p>
+                </div>
+                <div class="headerPageSettings">
+                    <div id="topSettingDiv">
+                        <button id="headerGear" type="button" onclick="showSettings()">&#x2699;&#xFE0E;</button>
+                    </div>
+                    <div class="allSettings">
+                        <div>
+                            <button id="gridModeToggle" type="button" onclick="gridModeToggle()">⊞</button>
+                            <!-- <button id="gridModeToggle" type="button">?</button> -->
+                        </div>
+                        <div>
+                            <button id="settingsButtonRowLabel" type="button" onclick="resetFontSize()">🗚</button>
+                            <!-- <p class=""></p> -->
+                            <button id="decreaseFontSize" type="button" onclick="decreaseFontSize()">−</button>
+                            <button id="increaseFontSize" type="button" onclick="increaseFontSize()">+</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </header>
+        <!-- <div class="popout_container" style="">
+            
+        </div> -->
+        <section class="posts">
+            <!-- .gridMode = 2x2 grid view -->
+            <div class="fullPostContainer">
+
+                <article class="post clearfix">
+                    <div class="postContainer">
+                        <div class="meta">
+                            <span class="date"><input id="dateInput" class="blend_in_inputfield" type="text" placeholder="2020-05-14"> </span>
+                            <span class="mood"><input id="moodInput" class="blend_in_inputfield" type="text" placeholder=":3"></span>
+                        </div>
+                        <div class="image_body_container">
+                            <div class="imagethumbnail" aria-hidden="true">
+                                <img id="imagePreview" src="" alt="ALT-TEXT-HERE">
+                            </div>
+                            <div class="body">
+                                    <div id="bodyEditor" contenteditable="true" placeholder="Write your post here...">
+                                        
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="metabottom">
+                            <span class="song"><input id="songInput" class="blend_in_inputfield" type="text" placeholder="title - author"></span>
+                        </div>
+                    </div>
+                    <div class="imageInputs">
+                        <input id="imageSrcInput" class="blend_in_inputfield" type="text" placeholder="Image Path/URL">
+                        <input id="imageAltInput" class="blend_in_inputfield" type="text" placeholder="alt text">
+                    </div>
+                </article>
+        </section>
+        <div class="controlButtons">
+            <button id="saveButton" type="button" onclick="savePost()">Save Post</button>
+            <button id="clearButton" type="button" onclick="clearPost()">Clear Post</button>
+        </div>
+    </div>
+</body>
+<script>
+    // simple barebones wysiwyg-style editor for the body post
+    // support: link (converted to <a href="url">value</a>)
+    // bold, italic
+    // first, get the editor
+    const editor = document.getElementById('bodyEditor');
+    // add event listener for keydown
+    // recall local storage content on page load
+    editor.innerHTML = localStorage.getItem('postBodyContent') || '';
+    const dateInput = document.getElementById('dateInput');
+    const moodInput = document.getElementById('moodInput');
+    const songInput = document.getElementById('songInput');
+    const imageSrcInput = document.getElementById('imageSrcInput');
+    const imageAltInput = document.getElementById('imageAltInput');
+    const imagePreview = document.getElementById('imagePreview');
+    dateInput.value = localStorage.getItem('postDate') || new Date().toISOString().split('T')[0];
+    moodInput.value = localStorage.getItem('postMood') || '';
+    songInput.value = localStorage.getItem('postSong') || '';
+    imageSrcInput.value = localStorage.getItem('postImageSrc') || '';
+    imageAltInput.value = localStorage.getItem('postImageAlt') || '';
+
+    editor.addEventListener('keydown', function (e) {
+        // if ctrl+b is pressed, toggle bold
+        if (e.ctrlKey && e.key === 'b') {
+            e.preventDefault();
+            document.execCommand('bold');
+        }
+        // if ctrl+i is pressed, toggle italic
+        if (e.ctrlKey && e.key === 'i') {
+            e.preventDefault();
+            document.execCommand('italic');
+        }
+        // if ctrl+k is pressed, prompt for link
+        if (e.ctrlKey && e.key === 'k') {
+            e.preventDefault();
+            // inline popup element  floating near the cursor position
+            // asks for url and link text
+            const url = prompt('Enter the URL:');
+            const linkText = prompt('Enter the link text:');
+            if (url && linkText) {
+                const a = document.createElement('a');
+                a.href = url;
+                a.textContent = linkText;
+                // insert the link at the cursor position
+                const range = window.getSelection().getRangeAt(0);
+                range.deleteContents();
+                range.insertNode(a);
+            }
+        }
+        // store the content of the editor in local storage on every change
+    });
+
+    editor.addEventListener('input', function () {
+        localStorage.setItem('postBodyContent', editor.innerHTML);
+    });
+    dateInput.addEventListener('input', function () {
+        console.log('date input changed');
+        localStorage.setItem('postDate', dateInput.value);
+    });
+    moodInput.addEventListener('input', function () {
+        localStorage.setItem('postMood', moodInput.value);
+    });
+    songInput.addEventListener('input', function () {
+        localStorage.setItem('postSong', songInput.value);
+    });
+    imageSrcInput.addEventListener('input', function () {
+        localStorage.setItem('postImageSrc', imageSrcInput.value);
+        document.getElementById('imagePreview').src = imageSrcInput.value;
+        imagePreview.src = imageSrcInput.value;
+        
+    });
+    imageAltInput.addEventListener('input', function () {
+        localStorage.setItem('postImageAlt', imageAltInput.value);
+        document.getElementById('imagePreview').alt = imageAltInput.value;
+    });
+    
+
+    function clearPost() {
+        editor.innerHTML = '';
+        dateInput.value = '';
+        moodInput.value = '';
+        songInput.value = '';
+        imageSrcInput.value = '';
+        imageAltInput.value = '';
+        localStorage.removeItem('postBodyContent');
+        localStorage.removeItem('postDate');
+        localStorage.removeItem('postMood');
+        localStorage.removeItem('postSong');
+        localStorage.removeItem('postImageSrc');
+        localStorage.removeItem('postImageAlt');
+    }
+
+    function savePost() {
+        const postData = {
+            date: dateInput.value,
+            mood: moodInput.value,
+            bodyText: editor.innerHTML,
+            song: songInput.value,
+            image: {
+                hasImage: imageSrcInput.value.trim() !== '',
+                src: imageSrcInput.value || '',
+                alt: imageAltInput.value || ''
+            }
+        };
+        console.log('Post data to save:', postData);    
+        // Here you would typically send this data to a server or save it in a file
+    }
+    /*
+    example format for posts as JSON
+            {
+            "date": "2025-11-13",
+            "mood": ":\\",
+            "bodyText": "browsed lots of websites today. played a cool game called <a href=\"https://dosogy.itch.io/mroi\">MROI_</a>. i need to fix my website. art is hard. DX friday. exams all next week.",
+            "image":{
+                "hasImage": true,
+                "src": "./imgs/2025-11-13.webp",
+                "alt": "alt-text-here"
+            },
+            "song": "52 blue mondays - jane remover"
+        },
+        {
+            "date": "2025-11-12",
+            "mood": ":)",
+            "bodyText": "body text body text body text",
+            "image":{
+                "hasImage": false,
+                "src": "",
+                "alt": ""
+            },
+            "song": "some song - some artist"
+        }
+    */
+
+</script>
+
+</html>

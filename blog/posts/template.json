@@ -1,0 +1,27 @@
+{
+    "postCount": 2,
+    "posts": [
+        {
+            "date": "2025-11-13",
+            "mood": ":\\",
+            "bodyText": "browsed lots of websites today. played a cool game called <a href=\"https://dosogy.itch.io/mroi\">MROI_</a>. i need to fix my website. art is hard. DX friday. exams all next week.",
+            "image":{
+                "hasImage": true,
+                "src": "./imgs/2025-11-13.webp",
+                "alt": "alt-text-here"
+            },
+            "song": "52 blue mondays - jane remover"
+        },
+        {
+            "date": "2025-11-12",
+            "mood": ":)",
+            "bodyText": "body text body text body text",
+            "image":{
+                "hasImage": false,
+                "src": "",
+                "alt": ""
+            },
+            "song": "some song - some artist"
+        }
+    ]
+}

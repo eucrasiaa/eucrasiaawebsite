@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Will's blog</title>
+    <link href="./style.css" rel="stylesheet" type="text/css" media="all">
+    <style></style>
+
+</head>
+<!-- ⊞ ⊟ -->
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="headerContainer">
+                <!-- title+subtitle -->
+                <!-- page settings -->
+                <div class="headerTitleContainer">
+                    <h1 id="pageTitle">Will's blog...</h1>
+                    <p>cs major. aspiring to be something more</p>
+                </div>
+                <div class="headerPageSettings">
+                    <div id="topSettingDiv">
+                        <button id="headerGear" type="button" onclick="showSettings()">&#x2699;&#xFE0E;</button>
+                    </div>
+                    <div class="allSettings">
+                        <div>
+                            <button id="gridModeToggle" type="button" onclick="gridModeToggle()">⊞</button>
+                            <!-- <button id="gridModeToggle" type="button">?</button> -->
+                        </div>
+                        <div>
+                            <button id="settingsButtonRowLabel" type="button" onclick="resetFontSize()">🗚</button>
+                            <!-- <p class=""></p> -->
+                            <button id="decreaseFontSize" type="button" onclick="decreaseFontSize()">−</button>
+                            <button id="increaseFontSize" type="button" onclick="increaseFontSize()">+</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </header>
+        <!-- <div class="popout_container" style="">
+            
+        </div> -->
+
+        <section class="posts">
+            <!-- .gridMode = 2x2 grid view -->
+            <div class="fullPostContainer" id="fullPostContainerInsertHere">
+<!-- 
+                <article class="post clearfix">
+                    <div class="postContainer">
+                        <div class="meta">
+                            <span class="date">2025-11-13</span>
+                            <span class="mood">:\</span>
+                        </div>
+                        <div class="image_body_container">
+                            <div class="imagethumbnail" aria-hidden="true">
+                                <img src="./imgs/2025-11-13.webp" alt="post image">
+                            </div>
+                            <div class="body">
+                                <p class="bodyText">browsed lots of websites today. played a cool game called <a
+                                        href="https://dosogy.itch.io/mroi">MROI_</a>. i need to fix my website. art is
+                                    hard.
+                                    DX friday. exams all next week.</p>
+                            </div>
+                        </div>
+                        <div class="metabottom">
+                            <span class="song">52 blue mondays - jane remover</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post clearfix">
+                    <div class="postContainer">
+                        <div class="meta">
+                            <span class="date">Date</span>
+                            <span class="mood">mood</span>
+                        </div>
+                        <div class="image_body_container">
+                            <div class="image_empty" aria-hidden="true">
+                            </div>
+                            <div class="body">
+                                <p class="bodyText">
+                                    filler text filler text
+                                </p>
+                            </div>
+                        </div>
+                        <div class="metabottom">
+                            <span class="song"></span>
+                        </div>
+                    </div>
+                </article>
+                <article class="post clearfix">
+                    <div class="postContainer">
+                        <div class="meta">
+                            <span class="date">Date</span>
+                            <span class="mood">mood</span>
+                        </div>
+                        <div class="image_body_container">
+                            <div class="image_empty" aria-hidden="true">
+                            </div>
+                            <div class="body">
+                                <p class="bodyText">
+                                    filler text filler text
+                                </p>
+                            </div>
+                        </div>
+                        <div class="metabottom">
+                            <span class="song"></span>
+                        </div>
+                    </div>
+                </article>
+                <article class="post clearfix">
+                    <div class="postContainer">
+                        <div class="meta">
+                            <span class="date">Date</span>
+                            <span class="mood">mood</span>
+                        </div>
+                        <div class="image_body_container">
+                            <div class="image_empty" aria-hidden="true">
+                            </div>
+                            <div class="body">
+                                <p class="bodyText">
+                                    filler text filler text
+                                </p>
+                            </div>
+                        </div>
+                        <div class="metabottom">
+                            <span class="song"></span>
+                        </div>
+                    </div>
+                </article> -->
+            </div>
+        </section>
+    </div>
+</body>
+<script src="./postJSHelp.js"></script>
+<script type="text/javascript">
+    const gridModeToggleElem = document.getElementById('gridModeToggle');
+    const fullPostContainer = document.querySelector('.fullPostContainer');
+
+    function gridModeToggle() {
+        fullPostContainer.classList.toggle('gridMode');
+        if (fullPostContainer.classList.contains('gridMode')) {
+            gridModeToggleElem.textContent = '⊟';
+        } else {
+            gridModeToggleElem.textContent = '⊞';
+        }
+    };
+    // font in html/body, 
+    function increaseFontSize() {
+        const root = document.documentElement;
+        const currentFontSize = parseFloat(getComputedStyle(root).getPropertyValue('--base-font-size'));
+        root.style.setProperty('--base-font-size', `${currentFontSize + 1}px`);
+    }
+    function decreaseFontSize() {
+        const root = document.documentElement;
+        const currentFontSize = parseFloat(getComputedStyle(root).getPropertyValue('--base-font-size'));
+        root.style.setProperty('--base-font-size', `${currentFontSize - 1}px`);
+    }
+    function resetFontSize() {
+        const root = document.documentElement;
+        root.style.setProperty('--base-font-size', `16px`);
+    }
+    function showSettings() {
+        const settingsElem = document.querySelector('.allSettings');
+        settingsElem.style.display = settingsElem.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    //create a PostManager object and init it
+    const postManager = new PostManager();
+    const whereToInsertPosts = "fullPostContainerInsertHere"
+    postManager.init(whereToInsertPosts);
+    window.addEventListener('scroll', scrollListener);
+    async function scrollListener() {
+        // console.log('Scroll event detected. Checking if user has scrolled to the bottom of the page...');
+        if(postManager.hitErrorLoading){
+            // let code figure it out, dont attempt to load just yet
+            console.log('Currently in error loading state. Waiting for error handling to complete before attempting to load more posts.');
+            return;
+        }
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+            console.log('User has scrolled to the bottom of the page. Loading more posts...');
+            // if alreadyloading, dont call multipletimex unnessarily
+            if (!postManager.IsCurrentlyLoading) {
+                await postManager.attemptNextPostLoad();
+            }
+            if (postManager.disableLoading) {
+                disableeventListeners();
+            }
+        }
+    };
+    // watch if user has scrolled to the bottom of the page, if so, load more posts
+    
+    
+     // this doesnt worn untill i manuallt call it once, why
+    // window.addEventListener('scroll', async () => {
+    //     console.log('Scroll event detected. Checking if user has scrolled to the bottom of the page...');
+    // });
+
+    
+    // why isnt this triggering?
+    // 
+    
+ 
+function disableeventListeners() {
+    window.removeEventListener('scroll', scrollListener);
+    console.log('No more posts to load. Scroll listener disabled.');
+}
+
+
+
+
+</script>
+
+
+</html>

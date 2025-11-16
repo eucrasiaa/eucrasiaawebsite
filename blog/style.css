@@ -1,0 +1,379 @@
+:root {
+    --page-bg: #f3efe0;
+    --panel-bg: #fffdf5;
+    --ink: #111;
+    --muted: #555;
+    --links: #6b8e23;
+    --accent: #000;
+    --base-font-size: 16px;
+    --meta-font-size: 12px;
+    --default-font-size: 14px;
+}
+
+html,
+body {
+    /* height: 100%; */
+    margin: 0;
+    padding: 0;
+    background: var(--page-bg);
+    color: var(--ink);
+    font-family: "Courier New", Courier, monospace;
+    font-size: var(--base-font-size);
+    line-height: 1.35;
+}
+
+.wrap {
+    /* width: 800px; */
+    width: 70%;
+    max-width: 96%;
+    margin: 28px auto;
+    padding: 12px;
+    border: 2px solid var(--accent);
+    background: var(--panel-bg);
+    overflow-x: hidden;
+}
+
+header {
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--accent);
+    margin-bottom: 12px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+header p {
+    margin: 6px 0 0 0;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+/* Posts list */
+.posts {
+    margin: 8px 0;
+}
+
+.post {
+    border: 1px solid var(--accent);
+    padding: 8px;
+    margin: 10px 0;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.post .metabottom::before {
+    content: "";
+    display: block;
+    width: 40%;
+    border-top: 1px solid var(--accent);
+    /* margin-bottom: 8px; */
+}
+
+.post .metabottom {
+    /* position: absolute; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    /* font-size: 14px; */
+    color: var(--muted);
+    margin-bottom: 20px;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    margin: 0;
+
+}
+
+.post {
+    position: relative;
+}
+
+.post .metabottom .song {
+    display: block;
+    text-align: center;
+}
+
+.post .meta {
+    /* font-size: 12px; */
+    color: var(--muted);
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.post .meta .date {
+    float: left;
+    font-weight: bold;
+}
+
+.post .meta .mood {
+    float: right;
+    font-weight: bold;
+}
+
+.post .metabottom .song {
+    display: block;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.post .metabottom .song::before {
+    content: "▶ ";
+}
+
+.post .imagethumbnail,
+.post .image_empty {
+    /* float: left; */
+    display: inline-block;
+    text-align: center;
+    line-height: 90px;
+    /* font-size: 12px; */
+    color: var(--muted);
+    background: #fff;
+    box-sizing: border-box;
+    border: 1px dashed var(--accent);
+}
+
+.post .imagethumbnail {
+
+    margin-right: 10px;
+    width: 120px;
+    height: 90px;
+}
+
+.post .image_empty {
+    border-color: transparent;
+    background: transparent;
+}
+
+.post .imagethumbnail img {
+    max-width: 120px;
+    max-height: 90px;
+    vertical-align: middle;
+    display: block;
+    margin: 0;
+    border: 0;
+    height: 100%;
+}
+
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* footer {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--accent);
+    padding-top: 8px;
+} */
+
+a {
+    color: var(--links);
+    /*color: #6b8e23;*/
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.popout_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.image_body_container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    padding-top: 4px;
+}
+
+.bodyText {
+    margin: 0;
+    padding: 0;
+}
+
+.image_body_container div {
+    /* align inner divs to top */
+    align-self: flex-start;
+}
+
+.postContainer {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.fullPostContainer {
+    all: unset;
+    display: flex;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.gridMode {
+    flex-direction: unset !important;
+}
+
+.gridMode article {
+    flex: 1 0 40%;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+
+#gridModeToggle {
+
+
+
+}
+
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.headerTitleContainer{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.headerPageSettings{
+    /* will have a handful of divs */
+    width:10%;
+    -ms-user-select: none;
+    user-select: none;
+    float: right;
+    /* border: 1px solid var(--accent); */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.allSettings{
+    width:100%;
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+    /* can we animate the stretch down as it appears? */
+    /* start with height 0 and then animate to auto */
+    /* overflow:hidden; */
+    /* border: 1px solid black; */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        /* border: 1px solid rgba(0, 0, 0, 1); */
+        /* height: 0; */
+    }
+    to {
+        opacity: 1;
+        /* border: 1px solid rgba(0, 0, 0,1); */
+        /* height: auto; */
+    }
+}
+
+/* .hideSettings{
+    display:none;
+} */
+
+
+.headerPageSettings button{
+    font-size: 18px;
+    cursor: pointer;
+    background: none;
+    border:none;
+    height:20px;
+    max-height: 20px;
+    min-height:20px;
+    line-height: 20px;
+    /* align text vertically */
+    vertical-align: middle;
+    /* border: 1px solid var(--accent);
+    border-radius: 4px; */
+    margin: 0px;
+    padding: 0px;
+}
+.allSettings div{
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:10px;
+}
+#headerGear{
+    font-size: 24px;
+    
+    
+    /* font-weight: bold; */
+}
+#topSettingDiv{
+    padding:4px;
+    /* border-bottom: 1px solid var(--accent); */
+}
+
+.settingsButtonRowLabel{
+    font-size: 18px;
+    background: none;
+    border:none;
+    padding:0px;
+    margin: 0px;
+    /* border-right:1px solid var(--accent); */
+}
+@media (max-width: 600px) {
+    .image_body_container {
+        flex-direction: column;
+    }
+
+    .image_body_container .body {
+        margin-top: 8px;
+    }
+    .wrap {
+        width: 95%;
+        margin: 0;
+        padding:2%;
+        /* padding: 12px; */
+    }
+
+    /* .wrap {
+                width: 100%;
+                margin: 0;
+                padding: 12px;
+            }
+            .post .imagethumbnail,
+            .post .image_empty {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+            }
+            .post .imagethumbnail img {
+                max-width: 100%;
+                height: auto;
+            } */
+}
