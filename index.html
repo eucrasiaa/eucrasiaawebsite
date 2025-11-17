@@ -236,6 +236,21 @@ body.preload *{
         opacity: 0;
         transition: opacity 300ms ease; /* matches JS `fade` */
     }
+    .nowPlayingContainer {
+        /* width: 100%; */
+        border: 1px solid var(--dark-brown);
+        /* border-radius: 10px; */
+        background-color: var(--eggshelly-ish);
+        padding: 0.5em;
+    }
+    .nowPlayingTrack {
+        font-family: "Radley", serif;
+        font-weight: 500;
+        font-size: 0.9em;
+        color: var(--dark-brown);
+        margin-top: 0.5em;
+    }
+    
     </style>
     </head>
     <body class="preload">
@@ -277,7 +292,13 @@ body.preload *{
                 </div> 
             </div>
             <div class="rightSidebar">
-
+                <div class="nowPlayingContainer">
+                    <p class="nowplayingLabel" id="nowPlayingLabelID">Recently Played:</p>
+                    <img src="./imgs/NotPlaying.webp" id="recordPlayerImg" alt="Now Playing" style="width:100%; height:auto; display:block;">
+                    <div class="nowPlayingInfo">
+                        <p class="nowPlayingTrack" id="songTrackHere">Title - Author</p>
+                    </div>  
+                </div>
             </div>
         </div>  
     </body>
@@ -322,6 +343,26 @@ body.preload *{
         // start the growth animation after a short delay
         // setTimeout(growVine, 600);
     });
+
+    // onload make call to "https://lastfm-last-played.biancarosa.com.br/SakuraKitten335/latest-song"
+    // example return:
+    /*{"track":{"@attr":{"nowplaying":"true"},"album":{"#text":"Rainbow Bridge 3","mbid":"27379a20-8808-42f3-804b-723845b24481"},"artist":{"#text":"Sematary","mbid":"8f4d9eb5-7b8f-4e7e-8c05-86cb211d7a7c"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/412c19248882dd4e9ff833d4470e0626.jpg","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/412c19248882dd4e9ff833d4470e0626.jpg","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/412c19248882dd4e9ff833d4470e0626.jpg","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/412c19248882dd4e9ff833d4470e0626.jpg","size":"extralarge"}],"mbid":"dbb49c09-21fe-44ff-9707-bc597c80eeea","name":"Truey Jeans","streamable":"0","url":"https://www.last.fm/music/Sematary/_/Truey+Jeans"}}
+    */
+   // put song title - artist in the nowPlayingTrackHere element, and if @attr nowplaying = "true", change the recordPlayerImg to /imgs/NowPlaying.webp.
+   fetch("https://lastfm-last-played.biancarosa.com.br/SakuraKitten335/latest-song")
+    .then(response => response.json())
+    .then(data => {
+        const track = data.track;
+        const nowPlaying = track['@attr'] && track['@attr'].nowplaying === "true";
+        const songTitle = track.name || "Unknown Title";
+        const artistName = track.artist['#text'] || "Unknown Artist";
+        document.getElementById("songTrackHere").textContent = `${songTitle} - ${artistName}`;
+        document.getElementById("nowPlayingLabelID").textContent = nowPlaying ? "Now Playing:" : "Recently Played:";
+        if (nowPlaying) {
+            document.getElementById("recordPlayerImg").src = "./imgs/NowPlaying.webp";
+        }
+    })
+
 
     async function growVineHelper() {
         // remove button
