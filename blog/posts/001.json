@@ -8,20 +8,42 @@
             "image":{
                 "hasImage": true,
                 "src": "./imgs/2025-11-13.webp",
-                "alt": "alt-text-here"
+                "alt": "screnshot of gameplay from the game MROI_."
             },
             "song": "52 blue mondays - jane remover"
         },
         {
-            "date": "2025-11-12",
+            "date": "2025-11-14",
             "mood": ":)",
-            "bodyText": "body text body text body text",
+            "bodyText": "i lied DX is saturday. oops. I was up so ungodly late thank goodness i didnt have a stat quiz today. i am full of joy and happyness and everything was beautiful and nothing hurt",
             "image":{
                 "hasImage": false,
                 "src": "",
                 "alt": ""
             },
-            "song": "some song - some artist"
+            "song": "Gold Chains - Genesis Owusu"
+        },
+        {
+            "date": "2025-11-15",
+            "mood": "JOY",
+            "bodyText": "DX IS TODAY. MY HEART IS FULL OF JOY. i am so. tired. was up far too late. again. oops. HOWEVER IT IS SO OK LIFE IS GOODO",
+            "image":{
+                "hasImage": false,
+                "src": "",
+                "alt": ""
+            },
+            "song": "ゲンチアナ - LonePi"
+        },
+        {
+            "date": "2025-11-16",
+            "mood": "xD",
+            "bodyText": "oh it was so much fun. my fit was chopped but genuinely my fav dx. such good energy and ppl and my friends im so happy. this week is gonna be so brutal.",
+            "image":{
+                "hasImage": true,
+                "src": "./imgs/2025-11-16.webp",
+                "alt": "Rules of Conduct for straight people sign from DX"
+            },
+            "song": "Lonely Eyes - The Front Bottoms"
         }
     ]
 }

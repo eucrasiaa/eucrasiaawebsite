@@ -187,6 +187,8 @@ class PostManager {
             console.error(`Container with id "${this.containerID}" not found.`);
             return;
         }
+        //reverse the postsToLoad array so that the latest posts are appended first
+        this.postsToLoad.reverse();
         this.postsToLoad.forEach(async post => {
             console.log('Appending post to page:', post);
             const postElement = await this.appendPost(post);
@@ -254,7 +256,7 @@ class PostManager {
                                 </div>` : 
                                 `<div class="image_empty" aria-hidden="true"></div>`
                             }
-                            </div>
+                            
                             <div class="body">
                                 <p class="bodyText">${postData.bodyText}</p>
                             </div>
