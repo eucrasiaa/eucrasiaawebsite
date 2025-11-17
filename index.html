@@ -195,6 +195,47 @@ body.preload *{
             width: 64%;
             margin-left:1%;
         }
+                       .vine.grown {
+                    animation: vineSway 3s ease-in-out 1s infinite alternate;
+                    transform-origin: center bottom;
+                }
+                @keyframes vineGrow {
+                    to { transform: scaleY(1); }
+                }
+                @keyframes vineSway {
+                    from { transform: rotate(-2deg); }
+                    to   { transform: rotate(2deg); }
+                }
+                    .vine-viewport {
+        width: 260px;       /* adjust as needed */
+        max-width: 100%;
+        height: 316px;      /* match single-image height */
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto;
+        border: 0;
+        background: transparent;
+    }
+
+    .vine-stack {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 490ms ease; /* (stepDelay 700ms * 0.7) */
+    }
+
+    /* image defaults previously set inline */
+    .vine-stack img {
+        width: 100%;
+        height: auto;
+        display: block;
+        opacity: 0;
+        transition: opacity 300ms ease; /* matches JS `fade` */
+    }
     </style>
     </head>
     <body class="preload">
@@ -218,7 +259,13 @@ body.preload *{
         </div>
         <div class="mainBodyAligner">
             <div class="leftSidebar">
-
+                <div class="vine-viewport">
+                    <div class="vine-stack" id="vineStack">
+                        <button class="tempVineLabel" onclick="growVineHelper()">Click here to grow the vine</button>
+                        <!-- vine segments will be inserted here by JS -->
+                         </div> 
+                         </div>
+                
             </div>
             <div class="centerBodyAligner">
                 <!-- 2 main interal, 35% 65% -->
@@ -238,5 +285,80 @@ body.preload *{
         setTimeout(function(){
     document.body.className="";
 },500);
+  
+
+    const stack= document.getElementById("vineStack");
+    const viewport = document.querySelector(".vine-viewport");
+    const base = "./imgs/";
+    const sequence = [
+        "Vine_sprout.webp",   // initial
+        "Vine_Top.webp",      // becomes the top
+        "Vine_5.webp",
+        "Vine_4.webp",
+        "Vine_3.webp",
+        "Vine_2.webp",
+        "Vine_1.webp"
+    ];
+    const stepDelay = 700;
+    const fade = 300; 
+    function createImg(src){
+        const img = document.createElement("img");
+        img.src = src;
+        img.style.width = "100%";
+        img.style.height = "auto";
+        img.style.display = "block";
+        img.style.opacity = "0";
+        img.style.transition = `opacity ${fade}ms ease`;
+        return new Promise((resolve)=> {
+            img.onload = ()=> { img.style.opacity = "1"; resolve(img); };
+            img.onerror = ()=> { console.warn("Failed loading", src); resolve(img); };
+        });
+    }
+    const mount = document.querySelector(".leftSidebar");
+    viewport.appendChild(stack);
+    mount.appendChild(viewport);
+    createImg(base + sequence[0]).then(img => {
+        stack.appendChild(img);
+        // start the growth animation after a short delay
+        // setTimeout(growVine, 600);
+    });
+
+    async function growVineHelper() {
+        // remove button
+        const button = stack.querySelector(".tempVineLabel");
+        if (button) button.remove();
+        await new Promise(r => setTimeout(r, 600));
+        const topImg = await createImg(base + sequence[1]);
+        stack.replaceChild(topImg, stack.children[0]);
+        await new Promise(r => setTimeout(r, 300));
+        for(let i=2;i<sequence.length;i++){
+            const src = base + sequence[i];
+            const seg = await createImg(src);
+            stack.appendChild(seg);
+            await new Promise(r => setTimeout(r, stepDelay));
+        }
+    }
+    async function growVine() {
+        // const sprout = await createImg(base + sequence[0]);
+        // stack.appendChild(sprout);
+        await new Promise(r => setTimeout(r, 600));
+        const topImg = await createImg(base + sequence[1]);
+        stack.replaceChild(topImg, stack.children[0]);
+        await new Promise(r => setTimeout(r, 300));
+        // function segHeight(){
+        //     const first = stack.querySelector("img");
+        //     console.log("First segment height:", first ? first.getBoundingClientRect().height : "No segments found");
+        //     return first ? first.getBoundingClientRect().height : viewport.getBoundingClientRect().height;
+        // }
+        for(let i=2;i<sequence.length;i++){
+
+            stack.style.transform = "translateY(0)";
+            const src = base + sequence[i];
+            const seg = await createImg(src);
+            stack.appendChild(seg);
+            await new Promise(r => requestAnimationFrame(r));
+            await new Promise(r => setTimeout(r, stepDelay));
+        }
+    };
     </script>
     </html>
