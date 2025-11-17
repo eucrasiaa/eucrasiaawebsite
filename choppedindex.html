@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>my landing page</title>
+    <link href="./style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+        html, body { height: 100%; margin: 0; }
+
+        .floating-container {
+            position: absolute;
+            top: 70%;
+            left: 70%;
+            width: 20%;
+            max-width: 220px;
+            transform: translate(-50%, -50%) rotate(10deg); 
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .floating-container-2 {
+            position: absolute;
+            top: 20%;
+            left: 70%;
+            width: 20%;
+            max-width: 220px;
+            transform: translate(-50%, -50%) rotate(-5deg); 
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .floating-container-2:hover {
+            transform: translate(-50%, -50%) rotate(0deg) scale(1.05);
+        }
+        .floating-container:hover {
+            transform: translate(-50%, -50%) rotate(-1deg) scale(1.2);
+        }
+        .floating-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+            pointer-events: none;
+        }
+
+        .floating-label {
+            position: absolute;
+            left: 50%;
+            bottom:0;
+            transform: translate(-50%);
+            color: black;
+            font-weight: 700;
+            text-align: center;
+            width:100%;
+            padding: 0.55em 0.5em;
+            pointer-events: auto; 
+            user-select: text;
+        }
+        .floating-container--left  { left: 65%; top: 68%; transform: translate(-50%, -50%) rotate(-4deg); }
+        .floating-container--right { left: 75%; top: 72%; transform: translate(-50%, -50%) rotate(10deg); }
+
+        body {
+            background: #5f6f3a;
+        }
+        :root{
+            --dark-green: #3b6b3a;
+            --other-darker-green:#2f552e;
+            --muted-greyish:#2f3a2b; 
+            --accent-green:#7a8a6e;
+            --tan-ish:#faf4e6;
+            --other-tan:#e7e5d5;
+
+            /* 4a563f */
+            /* #dad9c7 */
+        }
+        .clipboard-background {
+            background:#462b21;
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            width: 30%;
+            height: 80%;
+            border-radius: 10px;
+            
+        }
+        .clipboard-clasp {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            transform: translateX(-50%);
+            z-index: 100;
+        }   
+        .paper-clipped-to-board {
+            position: absolute;
+            top: 5%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            background: #fffef8;
+            border-radius: 5px;
+            
+        }
+        .clipboard-background{
+            transform: rotate(-3deg);
+        }
+        .clipboard-background:hover {
+            transform: rotate(0deg) scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        .paperTitle{
+            font-family: 'Georgia', serif;
+            font-size: 1.5em;
+            text-align: center;
+            padding-top: 1em;
+            color: #140419;
+        }
+        .smallBodyContent{
+            font-family: 'Georgia', serif;
+            font-size: 1em;
+            text-align: center;
+            padding: 0.5em 1em;
+            color: #140419;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- https://lastfm-last-played.biancarosa.com.br/SakuraKitten335/latest-song -->
+    <div class="clipboard-background">
+        <div class="clipboard-clasp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 90" width="65%" style="display:block;margin:0.6em auto 0;">
+                <g>
+                    <rect x="10" y="2" width="180" height="38" rx="8" ry="8" fill="#d7d7db" stroke="#b8b8bb" stroke-width="1"/>
+                    <circle cx="50" cy="22" r="4.2" fill="#c6c6c8" stroke="#8f8f91" stroke-width="1"/>
+                    <circle cx="150" cy="22" r="4.2" fill="#c6c6c8" stroke="#8f8f91" stroke-width="1"/>
+                </g>
+            </svg>
+        </div>
+        <div class="paper-clipped-to-board">
+            <br>
+
+            <h2 class="paperTitle">
+                My Temporary Landing Page
+            </h2>
+            <p class="smallBodyContent">    
+                Page is under construction, while i lock in a theme...
+            </p>
+            
+        </div>
+    </div>
+    <a href="./blog/index.html">
+    <div class="floating-container-2" style="background-color: #ffffff; border-radius: 10px; padding: 0.5em;">
+        <!-- blog -->
+         
+        <p>Blog</p>
+    </div>
+    
+    </a>
+    <!-- </div> -->
+    <div id="aboutMeFloat" class="floating-container">
+        <img id="aboutMe" src="./imgs/AsPolaroid_Base.png" alt="profile picture">
+        <div class="floating-label">About Me</div>
+    </div>
+
+    
+    <!-- add more images; adjust position by adding a modifier class or inline style:
+         <img src="./imgs/other.png" class="floating floating--right" style="top:74%; left:78%;">
+    -->
+</body>
+<script>
+    const aboutMe = document.getElementById('aboutMeFloat');
+    aboutMe.addEventListener('click', () => {
+        alert("havent finished that yet... oops");
+    });
+</script>
+</html> 

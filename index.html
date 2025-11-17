@@ -6,167 +6,237 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>my landing page</title>
     <link href="./style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
     <style>
-        html, body { height: 100%; margin: 0; }
 
-        .floating-container {
-            position: absolute;
-            top: 70%;
-            left: 70%;
-            width: 20%;
-            max-width: 220px;
-            transform: translate(-50%, -50%) rotate(10deg); 
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-                .floating-container-2 {
-            position: absolute;
-            top: 20%;
-            left: 70%;
-            width: 20%;
-            max-width: 220px;
-            transform: translate(-50%, -50%) rotate(-5deg); 
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-        .floating-container-2:hover {
-            transform: translate(-50%, -50%) rotate(0deg) scale(1.05);
-        }
-        .floating-container:hover {
-            transform: translate(-50%, -50%) rotate(-1deg) scale(1.2);
-        }
-        .floating-container img {
-            display: block;
-            width: 100%;
-            height: auto;
-            pointer-events: none;
-        }
+    /* @import "https://www.nerdfonts.com/assets/css/webfont.css"; */
+body.preload *{
+    animation-duration: 0s !important;
+    -webkit-animation-duration: 0s !important;
+    transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+}
 
-        .floating-label {
-            position: absolute;
-            left: 50%;
-            bottom:0;
-            transform: translate(-50%);
-            color: black;
-            font-weight: 700;
-            text-align: center;
-            width:100%;
-            padding: 0.55em 0.5em;
-            pointer-events: auto; 
-            user-select: text;
-        }
-        .floating-container--left  { left: 65%; top: 68%; transform: translate(-50%, -50%) rotate(-4deg); }
-        .floating-container--right { left: 75%; top: 72%; transform: translate(-50%, -50%) rotate(10deg); }
-
-        body {
-            background: #5f6f3a;
-        }
         :root{
-            --dark-green: #3b6b3a;
-            --other-darker-green:#2f552e;
-            --muted-greyish:#2f3a2b; 
-            --accent-green:#7a8a6e;
-            --tan-ish:#faf4e6;
-            --other-tan:#e7e5d5;
+            /* #485238 #3d482e  #1c0e01 #beab84 */
+            --deep-green: #485238;
+            --medium-green: #3d482e;
+            --dark-brown: #1c0e01;
+            --light-brown: #beab84;
+            --offwhite-blueish:#f0f8ff;
+            --accent-purple:#38182F;
+            --eggshelly-ish:#FAF3DD;
+            --offgrey-blue:#848FA5;
+            --pinkish-red:#C14953;
+            --lavender:#B7ADCB;
+            --dark-brown-red:#47281F;
+            /* --main-page-bkg */
+            --mintish:#DFF2D8;
 
-            /* 4a563f */
-            /* #dad9c7 */
         }
-        .clipboard-background {
-            background:#462b21;
-            position: absolute;
-            top: 5%;
-            left: 5%;
-            width: 30%;
-            height: 80%;
-            border-radius: 10px;
-            
+        
+        .sour-gummy {
+            font-family: "Sour Gummy", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
         }
-        .clipboard-clasp {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 100%;
-            transform: translateX(-50%);
-            z-index: 100;
-        }   
-        .paper-clipped-to-board {
-            position: absolute;
-            top: 5%;
-            left: 10%;
-            width: 80%;
-            height: 80%;
-            background: #fffef8;
-            border-radius: 5px;
-            
+
+        .theHeadersAligner{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        .clipboard-background{
-            transform: rotate(-3deg);
-        }
-        .clipboard-background:hover {
-            transform: rotate(0deg) scale(1.05);
-            transition: transform 0.3s ease;
-        }
-        .paperTitle{
-            font-family: 'Georgia', serif;
-            font-size: 1.5em;
-            text-align: center;
+        .headerTitleOtherThings {
+            width:80%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 0px;
+            /* padding-right:2em; */
             padding-top: 1em;
-            color: #140419;
+            padding-bottom: 1em;
+            margin: 0px;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-bottom:0.5%;
+            background-color: var(--deep-green);
+            /* rounded top to match navbar's rounded bottom */
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border:3px solid var(--dark-brown);
+            
         }
-        .smallBodyContent{
-            font-family: 'Georgia', serif;
-            font-size: 1em;
-            text-align: center;
-            padding: 0.5em 1em;
-            color: #140419;
+        .headerTitleOtherThings h1, .headerTitleOtherThings p {
+            margin: 0px;
+            padding: 0px;
+            text-align: right;
+            color: var(--offwhite-blueish);
+            color: var(--mintish);
+        }
+        .headerTitleOtherThings h1 {
+            font-size: 4em;
+            /* font-weight: 900; */
+        }
+        .navbar {
+            width:80%; 
+            margin: 0px;
+            margin-left: 10%;
+            margin-right: 10%;
+            padding: 0.5em 0;
+            display: flex;
+            justify-content: center;
+            gap: 5em;
+            background-color: var(--dark-brown-red);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border: 2px solid var(--dark-brown);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--eggshelly-ish);
+            font-family: "Sour Gummy", sans-serif;
+            font-weight: 500;
+            font-size: 1.2em;
+            animation: shrinkBack 0.4s ease-in-out;
+            animation-fill-mode: forwards;
+            vertical-align: middle;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        @keyframes shrinkBack {
+            from {
+                color: var(--pinkish-red);
+                transform: scale(1.05);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        .navbar a:hover {
+            color: var(--pinkish-red);
+            animation: slightGrow 0.4s ease-in-out;
+            /* it instantly goes back to normal after the animation, so we need to set it to forwards */
+            animation-fill-mode: forwards;
+            transform: scale(1.05);
+        }
+        @keyframes slightGrow {
+            from {
+                color: var(--eggshelly-ish);
+                transform: scale(1);
+            }   
+            to {
+                color: var(--pinkish-red);
+                transform: scale(1.05);
+            }
+        }
+        body{
+            background-color: var(--mintish);
+        }
+
+        /* &#x1F343;&#xFE0E; leaf 1*/
+        /* &#x1F342;&#xFE0E; leaf 2*/
+        /* &#x1F395;&#xFE0E; bundle of flowers */
+        /* &#x2698;&#xFE0E; flower */
+        /* 𖡼𖤣𖥧𖡼𓋼𖤣𖥧𓋼𓍊𓇗 */
+        .navbarFlowerDivider {
+            font-size: 1.5em;
+            color: var(--eggshelly-ish);
+            font-family: "Sour Gummy", sans-serif;
+                       vertical-align: middle;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .mainBodyAligner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2em 0;
+            margin:0px;
+        }
+        .mainBodyAligner .leftSidebar, .mainBodyAligner .centerBodyAligner, .mainBodyAligner .rightSidebar {
+            border:1px solid red;
+        }
+        .leftSidebar {
+            width: 8%;
+        }
+        .centerBodyAligner {
+            margin: 0 2%;
+            width: 78%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .rightSidebar {
+            width: 8%;
+        }
+        .centerBodyLeftHalf, .centerBodyRightHalf {
+            border:1px solid blue;
+            
+        }
+        .centerBodyLeftHalf {
+            width: 34%;
+            margin-right:1%;
+        }
+        .centerBodyRightHalf {
+            width: 64%;
+            margin-left:1%;
         }
     </style>
-
-</head>
-<body>
-    <div class="clipboard-background">
-        <div class="clipboard-clasp">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 90" width="65%" style="display:block;margin:0.6em auto 0;">
-                <g>
-                    <rect x="10" y="2" width="180" height="38" rx="8" ry="8" fill="#d7d7db" stroke="#b8b8bb" stroke-width="1"/>
-                    <circle cx="50" cy="22" r="4.2" fill="#c6c6c8" stroke="#8f8f91" stroke-width="1"/>
-                    <circle cx="150" cy="22" r="4.2" fill="#c6c6c8" stroke="#8f8f91" stroke-width="1"/>
-                </g>
-            </svg>
+    </head>
+    <body class="preload">
+        <!-- header. navbar.  -->
+        <div class="theHeadersAligner">
+                <div class="headerTitleOtherThings">
+                    <div style="padding-right:2em">
+                    <h1 class="headerMyName sour-gummy">eucrasiaa</h1>
+                    <p class="header subblurb">jovial subtitle here</p>
+                    </div>
+                </div>
+                <div class="navbar">
+                    <span class="navbarFlowerDivider">&#x1F343;&#xFE0E;</span>
+                    <a href="./index.html">home</a>
+                    <a href="./blog/index.html">blog</a>
+                    <a href="./index.html">projects</a>
+                    <a href="./index.html">placeholder</a>
+                    <a href="./index.html">about me</a>
+                    <span class="navbarFlowerDivider">&#x1F342;&#xFE0E;</span>
+                </div>
         </div>
-        <div class="paper-clipped-to-board">
-            <br>
+        <div class="mainBodyAligner">
+            <div class="leftSidebar">
 
-            <h2 class="paperTitle">
-                My Temporary Landing Page
-            </h2>
-            <p class="smallBodyContent">    
-                Page is under construction, while i lock in a theme...
-            </p>
-            
-        </div>
-    </div>
-    <a href="./blog/index.html">
-    <div class="floating-container-2" style="background-color: #ffffff; border-radius: 10px; padding: 0.5em;">
-        <!-- blog -->
-         
-        <p>Blog</p>
-    </div>
-    </a>
-    <!-- </div> -->
-    <div id="aboutMeFloat" class="floating-container">
-        <img id="aboutMe" src="./imgs/AsPolaroid_Base.png" alt="profile picture">
-        <div class="floating-label">About Me</div>
-    </div>
-    <!-- add more images; adjust position by adding a modifier class or inline style:
-         <img src="./imgs/other.png" class="floating floating--right" style="top:74%; left:78%;">
-    -->
-</body>
-<script>
-    const aboutMe = document.getElementById('aboutMeFloat');
-    aboutMe.addEventListener('click', () => {
-        alert("havent finished that yet... oops");
-    });
-</script>
-</html> 
+            </div>
+            <div class="centerBodyAligner">
+                <!-- 2 main interal, 35% 65% -->
+                 <div class="centerBodyLeftHalf">
+
+                 </div>
+                 <div class="centerBodyRightHalf">
+                    <h2 class="mainBodyTitle sour-gummy">welcome to my website</h2>
+                </div> 
+            </div>
+            <div class="rightSidebar">
+
+            </div>
+        </div>  
+    </body>
+    <script>
+        setTimeout(function(){
+    document.body.className="";
+},500);
+    </script>
+    </html>
