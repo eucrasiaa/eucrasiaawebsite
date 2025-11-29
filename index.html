@@ -8,35 +8,36 @@
     <link href="./style.css" rel="stylesheet" type="text/css" media="all">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
     <style>
+        /* @import "https://www.nerdfonts.com/assets/css/webfont.css"; */
+        body.preload * {
+            animation-duration: 0s !important;
+            -webkit-animation-duration: 0s !important;
+            transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+        }
 
-    /* @import "https://www.nerdfonts.com/assets/css/webfont.css"; */
-body.preload *{
-    animation-duration: 0s !important;
-    -webkit-animation-duration: 0s !important;
-    transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
-}
-
-        :root{
+        :root {
             /* #485238 #3d482e  #1c0e01 #beab84 */
             --deep-green: #485238;
             --medium-green: #3d482e;
             --dark-brown: #1c0e01;
             --light-brown: #beab84;
-            --offwhite-blueish:#f0f8ff;
-            --accent-purple:#38182F;
-            --eggshelly-ish:#FAF3DD;
-            --offgrey-blue:#848FA5;
-            --pinkish-red:#C14953;
-            --lavender:#B7ADCB;
-            --dark-brown-red:#47281F;
+            --offwhite-blueish: #f0f8ff;
+            --accent-purple: #38182F;
+            --eggshelly-ish: #FAF3DD;
+            --offgrey-blue: #848FA5;
+            --pinkish-red: #C14953;
+            --lavender: #B7ADCB;
+            --dark-brown-red: #47281F;
             /* --main-page-bkg */
-            --mintish:#DFF2D8;
+            --mintish: #DFF2D8;
 
         }
-        
+
         .sour-gummy {
             font-family: "Sour Gummy", sans-serif;
             font-optical-sizing: auto;
@@ -44,14 +45,15 @@ body.preload *{
             font-style: normal;
         }
 
-        .theHeadersAligner{
+        .theHeadersAligner {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
+
         .headerTitleOtherThings {
-            width:80%;
+            width: 80%;
 
             display: flex;
             flex-direction: column;
@@ -63,29 +65,33 @@ body.preload *{
             margin: 0px;
             margin-left: 10%;
             margin-right: 10%;
-            margin-bottom:0.5%;
+            margin-bottom: 0.5%;
             background-color: var(--deep-green);
             /* rounded top to match navbar's rounded bottom */
             border-top-left-radius: 40px;
             border-top-right-radius: 40px;
             border-bottom-left-radius: 0px;
             border-bottom-right-radius: 0px;
-            border:3px solid var(--dark-brown);
-            
+            border: 3px solid var(--dark-brown);
+
         }
-        .headerTitleOtherThings h1, .headerTitleOtherThings p {
+
+        .headerTitleOtherThings h1,
+        .headerTitleOtherThings p {
             margin: 0px;
             padding: 0px;
             text-align: right;
             color: var(--offwhite-blueish);
             color: var(--mintish);
         }
+
         .headerTitleOtherThings h1 {
             font-size: 4em;
             /* font-weight: 900; */
         }
+
         .navbar {
-            width:80%; 
+            width: 80%;
             margin: 0px;
             margin-left: 10%;
             margin-right: 10%;
@@ -115,15 +121,18 @@ body.preload *{
             margin-top: 0;
             margin-bottom: 0;
         }
+
         @keyframes shrinkBack {
             from {
                 color: var(--pinkish-red);
                 transform: scale(1.05);
             }
+
             to {
                 transform: scale(1);
             }
         }
+
         .navbar a:hover {
             color: var(--pinkish-red);
             animation: slightGrow 0.4s ease-in-out;
@@ -131,17 +140,20 @@ body.preload *{
             animation-fill-mode: forwards;
             transform: scale(1.05);
         }
+
         @keyframes slightGrow {
             from {
                 color: var(--eggshelly-ish);
                 transform: scale(1);
-            }   
+            }
+
             to {
                 color: var(--pinkish-red);
                 transform: scale(1.05);
             }
         }
-        body{
+
+        body {
             background-color: var(--mintish);
         }
 
@@ -154,25 +166,31 @@ body.preload *{
             font-size: 1.5em;
             color: var(--eggshelly-ish);
             font-family: "Sour Gummy", sans-serif;
-                       vertical-align: middle;
+            vertical-align: middle;
             padding-top: 0;
             padding-bottom: 0;
             margin-top: 0;
             margin-bottom: 0;
         }
+
         .mainBodyAligner {
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 2em 0;
-            margin:0px;
+            margin: 0px;
         }
-        .mainBodyAligner .leftSidebar, .mainBodyAligner .centerBodyAligner, .mainBodyAligner .rightSidebar {
-            border:1px solid red;
+
+        .mainBodyAligner .leftSidebar,
+        .mainBodyAligner .centerBodyAligner,
+        .mainBodyAligner .rightSidebar {
+            border: 1px solid red;
         }
+
         .leftSidebar {
             width: 8%;
         }
+
         .centerBodyAligner {
             margin: 0 2%;
             width: 78%;
@@ -180,135 +198,194 @@ body.preload *{
             justify-content: center;
             align-items: center;
         }
+
         .rightSidebar {
             width: 8%;
         }
-        .centerBodyLeftHalf, .centerBodyRightHalf {
-            border:1px solid blue;
-            
+
+        .centerBodyLeftHalf,
+        .centerBodyRightHalf {
+            border: 1px solid blue;
+
         }
+
         .centerBodyLeftHalf {
             width: 34%;
-            margin-right:1%;
+            margin-right: 1%;
         }
+
         .centerBodyRightHalf {
             width: 64%;
-            margin-left:1%;
+            margin-left: 1%;
         }
-                       .vine.grown {
-                    animation: vineSway 3s ease-in-out 1s infinite alternate;
-                    transform-origin: center bottom;
-                }
-                @keyframes vineGrow {
-                    to { transform: scaleY(1); }
-                }
-                @keyframes vineSway {
-                    from { transform: rotate(-2deg); }
-                    to   { transform: rotate(2deg); }
-                }
-                    .vine-viewport {
-        width: 260px;       /* adjust as needed */
-        max-width: 100%;
-        height: 316px;      /* match single-image height */
-        overflow: hidden;
-        position: relative;
-        margin: 0 auto;
-        border: 0;
-        background: transparent;
-    }
 
-    .vine-stack {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transition: transform 490ms ease; /* (stepDelay 700ms * 0.7) */
-    }
+        .vine.grown {
+            animation: vineSway 3s ease-in-out 1s infinite alternate;
+            transform-origin: center bottom;
+        }
 
-    /* image defaults previously set inline */
-    .vine-stack img {
-        width: 100%;
-        height: auto;
-        display: block;
-        opacity: 0;
-        transition: opacity 300ms ease; /* matches JS `fade` */
-    }
-    .nowPlayingContainer {
-        /* width: 100%; */
-        border: 1px solid var(--dark-brown);
-        /* border-radius: 10px; */
-        background-color: var(--eggshelly-ish);
-        padding: 0.5em;
-    }
-    .nowPlayingTrack {
-        font-family: "Radley", serif;
-        font-weight: 500;
-        font-size: 0.9em;
-        color: var(--dark-brown);
-        margin-top: 0.5em;
-    }
-    
+        @keyframes vineGrow {
+            to {
+                transform: scaleY(1);
+            }
+        }
+
+        @keyframes vineSway {
+            from {
+                transform: rotate(-2deg);
+            }
+
+            to {
+                transform: rotate(2deg);
+            }
+        }
+
+        .vine-viewport {
+            width: 260px;
+            /* adjust as needed */
+            max-width: 100%;
+            height: 316px;
+            /* match single-image height */
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+            border: 0;
+            background: transparent;
+        }
+
+        .vine-stack {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 490ms ease;
+            /* (stepDelay 700ms * 0.7) */
+        }
+
+        /* image defaults previously set inline */
+        .vine-stack img {
+            width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0;
+            transition: opacity 300ms ease;
+            /* matches JS `fade` */
+        }
+
+        .nowPlayingContainer {
+            /* width: 100%; */
+            border: 1px solid var(--dark-brown);
+            /* border-radius: 10px; */
+            background-color: var(--eggshelly-ish);
+            padding: 0.5em;
+        }
+
+        .nowPlayingTrack {
+            font-family: "Radley", serif;
+            font-weight: 500;
+            font-size: 0.9em;
+            color: var(--dark-brown);
+            margin-top: 0.5em;
+        }
+
+        .flowerAnimate {
+            transform-origin: center top;
+        }
+        
+        @keyframes overSwingReturnLeft {
+            0% {
+                transform: rotate(10deg);
+            }
+            50% {
+                transform: rotate(-10deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+        
+        @keyframes overSwingReturnRight {
+            0% {
+                transform: rotate(-10deg);
+            }
+            50% {
+                transform: rotate(10deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
     </style>
-    </head>
-    <body class="preload">
-        <!-- header. navbar.  -->
-        <div class="theHeadersAligner">
-                <div class="headerTitleOtherThings">
-                    <div style="padding-right:2em">
-                    <h1 class="headerMyName sour-gummy">eucrasiaa</h1>
-                    <p class="header subblurb">jovial subtitle here</p>
-                    </div>
-                </div>
-                <div class="navbar">
-                    <span class="navbarFlowerDivider">&#x1F343;&#xFE0E;</span>
-                    <a href="./index.html">home</a>
-                    <a href="./blog/index.html">blog</a>
-                    <a href="./index.html">projects</a>
-                    <a href="./index.html">placeholder</a>
-                    <a href="./index.html">about me</a>
-                    <span class="navbarFlowerDivider">&#x1F342;&#xFE0E;</span>
-                </div>
+</head>
+
+<body class="preload">
+    <!-- header. navbar.  -->
+    <div class="theHeadersAligner">
+        <div class="headerTitleOtherThings">
+            <div style="padding-right:2em">
+                <h1 class="headerMyName sour-gummy">eucrasiaa</h1>
+                <p class="header subblurb">jovial subtitle here</p>
+            </div>
         </div>
-        <div class="mainBodyAligner">
-            <div class="leftSidebar">
-                <div class="vine-viewport">
-                    <div class="vine-stack" id="vineStack">
-                        <button class="tempVineLabel" onclick="growVineHelper()">Click here to grow the vine</button>
-                        <!-- vine segments will be inserted here by JS -->
-                         </div> 
-                         </div>
-                
-            </div>
-            <div class="centerBodyAligner">
-                <!-- 2 main interal, 35% 65% -->
-                 <div class="centerBodyLeftHalf">
+        <div class="navbar">
+            <span class="navbarFlowerDivider">&#x1F343;&#xFE0E;</span>
+            <a href="./index.html">home</a>
+            <a href="./blog/index.html">blog</a>
+            <a href="./index.html">projects</a>
+            <a href="./index.html">placeholder</a>
+            <a href="./index.html">about me</a>
+            <span class="navbarFlowerDivider">&#x1F342;&#xFE0E;</span>
+        </div>
+        <!-- <div class="hangingFlowerPot">
+            <svg class="flowerAnimate" id="theFlowerPot" width="60" height="130" viewBox="0 0 60 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect id="flowerPotRect" x="0" y="65" width="60" height="70" fill="#C14953"></rect>
+                <line x1="0" y1="65" x2="30" y2="0" stroke="#38182F" stroke-width="2"></line>
+                <line x1="60" y1="65" x2="30" y2="0" stroke="#38182F" stroke-width="2"></line>
+            </svg>
 
-                 </div>
-                 <div class="centerBodyRightHalf">
-                    <h2 class="mainBodyTitle sour-gummy">welcome to my website</h2>
-                </div> 
-            </div>
-            <div class="rightSidebar">
-                <div class="nowPlayingContainer">
-                    <p class="nowplayingLabel" id="nowPlayingLabelID">Recently Played:</p>
-                    <img src="./imgs/NotPlaying.webp" id="recordPlayerImg" alt="Now Playing" style="width:100%; height:auto; display:block;">
-                    <div class="nowPlayingInfo">
-                        <p class="nowPlayingTrack" id="songTrackHere">Title - Author</p>
-                    </div>  
+        </div> -->
+    </div>
+    <div class="mainBodyAligner">
+        <div class="leftSidebar">
+            <div class="vine-viewport">
+                <div class="vine-stack" id="vineStack">
+                    <button class="tempVineLabel" onclick="growVineHelper()">Click here to grow the vine</button>
+                    <!-- vine segments will be inserted here by JS -->
                 </div>
             </div>
-        </div>  
-    </body>
-    <script>
-        setTimeout(function(){
-    document.body.className="";
-},500);
-  
 
-    const stack= document.getElementById("vineStack");
+        </div>
+        <div class="centerBodyAligner">
+            <!-- 2 main interal, 35% 65% -->
+            <div class="centerBodyLeftHalf">
+
+            </div>
+            <div class="centerBodyRightHalf">
+                <h2 class="mainBodyTitle sour-gummy">welcome to my website</h2>
+            </div>
+        </div>
+        <div class="rightSidebar">
+            <div class="nowPlayingContainer">
+                <p class="nowplayingLabel" id="nowPlayingLabelID">Recently Played:</p>
+                <img src="./imgs/NotPlaying.webp" id="recordPlayerImg" alt="Now Playing"
+                    style="width:100%; height:auto; display:block;">
+                <div class="nowPlayingInfo">
+                    <p class="nowPlayingTrack" id="songTrackHere">Title - Author</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    setTimeout(function () {
+        document.body.className = "";
+    }, 500);
+
+
+    const stack = document.getElementById("vineStack");
     const viewport = document.querySelector(".vine-viewport");
     const base = "./imgs/";
     const sequence = [
@@ -321,8 +398,8 @@ body.preload *{
         "Vine_1.webp"
     ];
     const stepDelay = 700;
-    const fade = 300; 
-    function createImg(src){
+    const fade = 300;
+    function createImg(src) {
         const img = document.createElement("img");
         img.src = src;
         img.style.width = "100%";
@@ -330,9 +407,9 @@ body.preload *{
         img.style.display = "block";
         img.style.opacity = "0";
         img.style.transition = `opacity ${fade}ms ease`;
-        return new Promise((resolve)=> {
-            img.onload = ()=> { img.style.opacity = "1"; resolve(img); };
-            img.onerror = ()=> { console.warn("Failed loading", src); resolve(img); };
+        return new Promise((resolve) => {
+            img.onload = () => { img.style.opacity = "1"; resolve(img); };
+            img.onerror = () => { console.warn("Failed loading", src); resolve(img); };
         });
     }
     const mount = document.querySelector(".leftSidebar");
@@ -348,20 +425,20 @@ body.preload *{
     // example return:
     /*{"track":{"@attr":{"nowplaying":"true"},"album":{"#text":"Rainbow Bridge 3","mbid":"27379a20-8808-42f3-804b-723845b24481"},"artist":{"#text":"Sematary","mbid":"8f4d9eb5-7b8f-4e7e-8c05-86cb211d7a7c"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/412c19248882dd4e9ff833d4470e0626.jpg","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/412c19248882dd4e9ff833d4470e0626.jpg","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/412c19248882dd4e9ff833d4470e0626.jpg","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/412c19248882dd4e9ff833d4470e0626.jpg","size":"extralarge"}],"mbid":"dbb49c09-21fe-44ff-9707-bc597c80eeea","name":"Truey Jeans","streamable":"0","url":"https://www.last.fm/music/Sematary/_/Truey+Jeans"}}
     */
-   // put song title - artist in the nowPlayingTrackHere element, and if @attr nowplaying = "true", change the recordPlayerImg to /imgs/NowPlaying.webp.
-   fetch("https://lastfm-last-played.biancarosa.com.br/SakuraKitten335/latest-song")
-    .then(response => response.json())
-    .then(data => {
-        const track = data.track;
-        const nowPlaying = track['@attr'] && track['@attr'].nowplaying === "true";
-        const songTitle = track.name || "Unknown Title";
-        const artistName = track.artist['#text'] || "Unknown Artist";
-        document.getElementById("songTrackHere").textContent = `${songTitle} - ${artistName}`;
-        document.getElementById("nowPlayingLabelID").textContent = nowPlaying ? "Now Playing:" : "Recently Played:";
-        if (nowPlaying) {
-            document.getElementById("recordPlayerImg").src = "./imgs/NowPlaying.webp";
-        }
-    })
+    // put song title - artist in the nowPlayingTrackHere element, and if @attr nowplaying = "true", change the recordPlayerImg to /imgs/NowPlaying.webp.
+    fetch("https://lastfm-last-played.biancarosa.com.br/SakuraKitten335/latest-song")
+        .then(response => response.json())
+        .then(data => {
+            const track = data.track;
+            const nowPlaying = track['@attr'] && track['@attr'].nowplaying === "true";
+            const songTitle = track.name || "Unknown Title";
+            const artistName = track.artist['#text'] || "Unknown Artist";
+            document.getElementById("songTrackHere").textContent = `${songTitle} - ${artistName}`;
+            document.getElementById("nowPlayingLabelID").textContent = nowPlaying ? "Now Playing:" : "Recently Played:";
+            if (nowPlaying) {
+                document.getElementById("recordPlayerImg").src = "./imgs/NowPlaying.webp";
+            }
+        })
 
 
     async function growVineHelper() {
@@ -372,7 +449,7 @@ body.preload *{
         const topImg = await createImg(base + sequence[1]);
         stack.replaceChild(topImg, stack.children[0]);
         await new Promise(r => setTimeout(r, 300));
-        for(let i=2;i<sequence.length;i++){
+        for (let i = 2; i < sequence.length; i++) {
             const src = base + sequence[i];
             const seg = await createImg(src);
             stack.appendChild(seg);
@@ -391,7 +468,7 @@ body.preload *{
         //     console.log("First segment height:", first ? first.getBoundingClientRect().height : "No segments found");
         //     return first ? first.getBoundingClientRect().height : viewport.getBoundingClientRect().height;
         // }
-        for(let i=2;i<sequence.length;i++){
+        for (let i = 2; i < sequence.length; i++) {
 
             stack.style.transform = "translateY(0)";
             const src = base + sequence[i];
@@ -401,5 +478,73 @@ body.preload *{
             await new Promise(r => setTimeout(r, stepDelay));
         }
     };
-    </script>
-    </html>
+    // let inSwing = false;
+    // let inSwingBack = false;
+    // const theFlower = document.getElementById('theFlowerPot');
+    // const flowerPotRect = document.getElementById('flowerPotRect');
+    // theFlower.addEventListener('pointermove', (event) => {
+    //     // const rect = theFlower.getBoundingClientRect();
+    //     // if (Math.abs(rect.left + rect.width / 2 - event.clientX) > 100 || Math.abs(rect.top + rect.height / 2 - event.clientY) > 100) {
+    //     //     return;
+    //     // }
+    //     // if hit here, change color to indicate interaction
+    //     flowerPotRect.style.fill = "#ffffff";
+    //     // check which side mouse is on. if left, rotate left, if right, rotate right. the further from center, the more it rotates.
+    //     // set inSwing to true to prevent multiple animations from stacking
+    //     if (inSwing) return;
+    //     inSwing = true; 
+    //     //if inSwingBack, and hit mouse, set the rotaiton to current rotation as if the mouse has halted its return
+    //     // 
+    //     if(inSwingBack) return;
+    //     const centerX = theFlower.getBoundingClientRect().left + theFlower.getBoundingClientRect().width / 2;
+    //     const distanceFromCenter = event.clientX - centerX;
+    //     const maxRotation = 20; // degrees  
+    //     const rotation = Math.max(-maxRotation, Math.min(maxRotation, (distanceFromCenter / 10) * maxRotation));
+    //     theFlower.style.transform = `rotate(${rotation}deg)`;
+
+    // });
+    // theFlower.addEventListener('pointerleave', () => {
+    //     flowerPotRect.style.fill = "#C14953";
+    //     // play swing back animation to return to center
+    //     // swing past center, and then slightly past the other side, and then back to center, to create a damping effect
+    //     if(inSwing) { // swinging
+    //         if(inSwingBack) return;
+    //         inSwingBack = true;
+            
+    //         theFlower.style.transition = "transform 700ms cubic-bezier(.22, .9, .3, 1)";
+    //         // get current rotation, and figure out which way to overswing to 
+    //         const currentRotation = parseFloat(theFlower.style.transform.replace(/rotate\((-?\d+)deg\)/, '$1')) || 0;
+    //         const overswing = currentRotation > 0 ? -10 : 10; // overs
+    //         // swing back to center, then overswing, then back to center
+    //         theFlower.style.transform = `rotate(${overswing}deg)`;
+    //         // then use the overswingReturnLeft or overswingReturnRight animation to return to center
+    //         const animationName = overswing > 0 ? 'overSwingReturnRight' : 'overSwingReturnLeft';
+    //         theFlower.style.animation = `${animationName} 700ms cubic-bezier(.22, .9, .3, 1) forwards`;
+            
+    //         inSwing = false;
+    //         inSwingBack = false;
+    //     }
+    // });
+    // (() => {
+    //     let timeout;
+    //     // const flowers = () => document.querySelectorAll('.flowerAnimate');
+    //     const flower = document.getElementById('theFlowerPot');
+    //     window.addEventListener('pointermove', () => {
+    //         // check if the mouse is within 200px of the flower, if not, return
+    //         const rect = flower.getBoundingClientRect();
+    //         if (Math.abs(rect.left + rect.width / 2 - event.clientX) > 200 || Math.abs(rect.top + rect.height / 2 - event.clientY) > 200) {
+    //             return;
+    //         }
+    //         clearTimeout(timeout);
+    //         // let the mouse push it, rotate such that it appears the mouse is pushing the flower (by rotating it, pivot is set)
+    //         const x = event.clientX;
+    //         const y = event.clientY;
+    //         flower .style.transform = `rotate(${(x - window.innerWidth / 2) / 20}deg)`;
+    //         timeout = setTimeout(() => {
+    //             flower.style.transform = `rotate(0deg)`;
+    //         }, 1000);
+    //     }, { passive: true });
+    // })();
+</script>
+
+</html>

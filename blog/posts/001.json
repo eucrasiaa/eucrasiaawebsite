@@ -5,7 +5,7 @@
             "date": "2025-11-13",
             "mood": ":\\",
             "bodyText": "browsed lots of websites today. played a cool game called <a href=\"https://dosogy.itch.io/mroi\">MROI_</a>. i need to fix my website. art is hard. DX friday. exams all next week.",
-            "image":{
+            "image": {
                 "hasImage": true,
                 "src": "./imgs/2025-11-13.webp",
                 "alt": "screnshot of gameplay from the game MROI_."
@@ -16,7 +16,7 @@
             "date": "2025-11-14",
             "mood": ":)",
             "bodyText": "i was up so ungodly late thank goodness i didnt have a stat quiz today. i am full of joy and happyness and everything was beautiful and nothing hurt",
-            "image":{
+            "image": {
                 "hasImage": false,
                 "src": "",
                 "alt": ""
@@ -27,7 +27,7 @@
             "date": "2025-11-15",
             "mood": "JOY",
             "bodyText": "DX IS TODAY. MY HEART IS FULL OF JOY. i am so. tired. was up far too late. again. oops. HOWEVER IT IS SO OK LIFE IS GOODO",
-            "image":{
+            "image": {
                 "hasImage": false,
                 "src": "",
                 "alt": ""
@@ -38,12 +38,56 @@
             "date": "2025-11-16",
             "mood": "xD",
             "bodyText": "oh it was so much fun. however. this week is gonna be so brutal. spent 1000 years working on this website and 0 hw done!!",
-            "image":{
+            "image": {
                 "hasImage": true,
                 "src": "./imgs/2025-11-16.webp",
                 "alt": "Rules of Conduct for straight people sign from DX"
             },
             "song": "Lonely Eyes - The Front Bottoms"
+        },
+        {
+            "date": "2025-11-20",
+            "mood": "yummers",
+            "bodyText": "thinking about: midnight breakfast",
+            "song": "iPod Touch - Ninajirachi",
+            "image": {
+                "hasImage": false,
+                "src": "",
+                "alt": ""
+            }
+        },
+        {
+            "date": "2025-11-25",
+            "mood": "GAHHHARKFEFJNRFJE",
+            "bodyText": "im starting winter break early i dont even care anymoreeee bleh",
+            "song": "*it merely marches forward* - Willy Rodriguez",
+            "image": {
+                "hasImage": false,
+                "src": "",
+                "alt": ""
+            }
+        },
+        {
+            "date": "2025-11-27",
+            "mood": ":D",
+            "bodyText": "drew for far too many hours. thanksgiving was fun. why are we ALL watching hazbin hotel lowk...&nbsp;",
+            "song": "Roommates - Malcolm Todd",
+            "image": {
+                "hasImage": false,
+                "src": "",
+                "alt": ""
+            }
+        },
+        {
+            "date": "2025-11-28",
+            "mood": "yaawn",
+            "bodyText": "worked another few hours on my filesystem project. was up far too late last night. but. im happy.",
+            "song": "Using You - Mars Algo",
+            "image": {
+                "hasImage": false,
+                "src": "",
+                "alt": ""
+            }
         }
     ]
 }
