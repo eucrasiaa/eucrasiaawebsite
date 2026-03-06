@@ -143,6 +143,9 @@ header p {
     margin-right: 10px;
     width: 120px;
     height: 90px;
+    max-width: fit-content;
+    display: flex;
+    justify-content: center;
 }
 
 .post .image_empty {
