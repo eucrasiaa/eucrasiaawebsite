@@ -1,93 +1,195 @@
 {
-    "postCount": 4,
-    "posts": [
-        {
-            "date": "2025-11-13",
-            "mood": ":\\",
-            "bodyText": "browsed lots of websites today. played a cool game called <a href=\"https://dosogy.itch.io/mroi\">MROI_</a>. i need to fix my website. art is hard. DX friday. exams all next week.",
-            "image": {
-                "hasImage": true,
-                "src": "./imgs/2025-11-13.webp",
-                "alt": "screnshot of gameplay from the game MROI_."
-            },
-            "song": "52 blue mondays - jane remover"
-        },
-        {
-            "date": "2025-11-14",
-            "mood": ":)",
-            "bodyText": "i was up so ungodly late thank goodness i didnt have a stat quiz today. i am full of joy and happyness and everything was beautiful and nothing hurt",
-            "image": {
-                "hasImage": false,
-                "src": "",
-                "alt": ""
-            },
-            "song": "Gold Chains - Genesis Owusu"
-        },
-        {
-            "date": "2025-11-15",
-            "mood": "JOY",
-            "bodyText": "DX IS TODAY. MY HEART IS FULL OF JOY. i am so. tired. was up far too late. again. oops. HOWEVER IT IS SO OK LIFE IS GOODO",
-            "image": {
-                "hasImage": false,
-                "src": "",
-                "alt": ""
-            },
-            "song": "ゲンチアナ - LonePi"
-        },
-        {
-            "date": "2025-11-16",
-            "mood": "xD",
-            "bodyText": "oh it was so much fun. however. this week is gonna be so brutal. spent 1000 years working on this website and 0 hw done!!",
-            "image": {
-                "hasImage": true,
-                "src": "./imgs/2025-11-16.webp",
-                "alt": "Rules of Conduct for straight people sign from DX"
-            },
-            "song": "Lonely Eyes - The Front Bottoms"
-        },
-        {
-            "date": "2025-11-20",
-            "mood": "yummers",
-            "bodyText": "thinking about: midnight breakfast",
-            "song": "iPod Touch - Ninajirachi",
-            "image": {
-                "hasImage": false,
-                "src": "",
-                "alt": ""
-            }
-        },
-        {
-            "date": "2025-11-25",
-            "mood": "GAHHHARKFEFJNRFJE",
-            "bodyText": "im starting winter break early i dont even care anymoreeee bleh",
-            "song": "*it merely marches forward* - Willy Rodriguez",
-            "image": {
-                "hasImage": false,
-                "src": "",
-                "alt": ""
-            }
-        },
-        {
-            "date": "2025-11-27",
-            "mood": ":D",
-            "bodyText": "drew for far too many hours. thanksgiving was fun. why are we ALL watching hazbin hotel lowk...&nbsp;",
-            "song": "Roommates - Malcolm Todd",
-            "image": {
-                "hasImage": false,
-                "src": "",
-                "alt": ""
-            }
-        },
-        {
-            "date": "2025-11-28",
-            "mood": "yaawn",
-            "bodyText": "worked another few hours on my filesystem project. was up far too late last night. but. im happy.",
-            "song": "Using You - Mars Algo",
-            "image": {
-                "hasImage": false,
-                "src": "",
-                "alt": ""
-            }
-        }
-    ]
+  "postCount": 4,
+  "posts": [
+    {
+      "date": "2025-11-13",
+      "mood": ":\\",
+      "bodyText": "browsed lots of websites today. played a cool game called <a href=\"https://dosogy.itch.io/mroi\">MROI_</a>. i need to fix my website. art is hard. DX friday. exams all next week.",
+      "image": {
+        "hasImage": true,
+        "src": "./imgs/2025-11-13.webp",
+        "alt": "screnshot of gameplay from the game MROI_."
+      },
+      "song": "52 blue mondays - jane remover"
+    },
+    {
+      "date": "2025-11-14",
+      "mood": ":)",
+      "bodyText": "i was up so ungodly late thank goodness i didnt have a stat quiz today. i am full of joy and happyness and everything was beautiful and nothing hurt",
+      "image": {
+        "hasImage": false,
+        "src": "",
+        "alt": ""
+      },
+      "song": "Gold Chains - Genesis Owusu"
+    },
+    {
+      "date": "2025-11-15",
+      "mood": "JOY",
+      "bodyText": "DX IS TODAY. MY HEART IS FULL OF JOY. i am so. tired. was up far too late. again. oops. HOWEVER IT IS SO OK LIFE IS GOODO",
+      "image": {
+        "hasImage": false,
+        "src": "",
+        "alt": ""
+      },
+      "song": "ゲンチアナ - LonePi"
+    },
+    {
+      "date": "2025-11-16",
+      "mood": "xD",
+      "bodyText": "oh it was so much fun. however. this week is gonna be so brutal. spent 1000 years working on this website and 0 hw done!!",
+      "image": {
+        "hasImage": true,
+        "src": "./imgs/2025-11-16.webp",
+        "alt": "Rules of Conduct for straight people sign from DX"
+      },
+      "song": "Lonely Eyes - The Front Bottoms"
+    },
+    {
+      "date": "2025-11-20",
+      "mood": "yummers",
+      "bodyText": "thinking about: midnight breakfast",
+      "song": "iPod Touch - Ninajirachi",
+      "image": {
+        "hasImage": false,
+        "src": "",
+        "alt": ""
+      }
+    },
+    {
+      "date": "2025-11-25",
+      "mood": "GAHHHARKFEFJNRFJE",
+      "bodyText": "im starting winter break early i dont even care anymoreeee bleh",
+      "song": "*it merely marches forward* - Willy Rodriguez",
+      "image": {
+        "hasImage": false,
+        "src": "",
+        "alt": ""
+      }
+    },
+    {
+      "date": "2025-11-27",
+      "mood": ":D",
+      "bodyText": "drew for far too many hours. thanksgiving was fun. why are we ALL watching hazbin hotel lowk...&nbsp;",
+      "song": "Roommates - Malcolm Todd",
+      "image": {
+        "hasImage": false,
+        "src": "",
+        "alt": ""
+      }
+    },
+    {
+      "date": "2025-11-28",
+      "mood": "yaawn",
+      "bodyText": "worked another few hours on my filesystem project. was up far too late last night. but. im happy.",
+      "song": "Using You - Mars Algo",
+      "image": {
+        "hasImage": false,
+        "src": "",
+        "alt": ""
+      }
+    },
+    {
+      "date": "2026-02-18",
+      "mood": "*~*",
+      "bodyText": "deer. something soon. i have a feeling",
+      "song": "Phish Pepsi - Wednesday",
+      "image": {
+        "hasImage": true,
+        "src": "./imgs/2026-02-18.webp",
+        "alt": "deer. snow"
+      }
+    },
+    {
+      "date": "2026-02-22",
+      "mood": "blue",
+      "bodyText": "who up. claymation-ing?",
+      "song": "Melt a Bed - Asian Glow, Weatherday",
+      "image": {
+        "hasImage": true,
+        "src": "./imgs/2026-02-22.webp",
+        "alt": "software for stop motion"
+      }
+    },
+    {
+      "date": "2026-02-24",
+      "mood": "<3",
+      "bodyText": "somethings something beauty and joy in life even if if they gave me some nonsense for lunch today :sob:",
+      "song": "Romeo - PinkPantheress",
+      "image": {
+        "hasImage": true,
+        "src": "./imgs/2026-02-24.webp",
+        "alt": "my brother made hardtack and ??? slop for his class"
+      }
+    },
+    {
+      "date": "2026-02-27",
+      "mood": "B)",
+      "bodyText": "thinking about: compiler designs.&nbsp; also, i never really got the B) face ngl",
+      "song": "glass beach - glass beach",
+      "image": {
+        "hasImage": true,
+        "src": "./imgs/2026-02-27.webp",
+        "alt": "spotify audiobook recommendation page, showing the boar book for data apps"
+      }
+    },
+    {
+      "date": "2026-02-28",
+      "mood": "-_- zzz",
+      "bodyText": "who up in the ol city of Chicago!! meee. gingerbee tmrw.&nbsp;",
+      "song": "glass beach - glass beach",
+      "image": {
+        "hasImage": true,
+        "src": "./imgs/2026-02-28.webp",
+        "alt": "toll road enterence to chicago, at night with neon lights"
+      }
+    },
+    {
+      "date": "2026-03-01",
+      "mood": ":OOO",
+      "bodyText": "Gingerbee tonight. ready for the most beautiful thing ever. I CANT WAIT OMGOMG. painting: Untitled -&nbsp;Firelei Báez. horsey. seen at the MCA",
+      "song": "Concrete - Gingerbee",
+      "image": {
+        "hasImage": true,
+        "src": "./imgs/2026-03-01.webp",
+        "alt": "a painting, drawn over a old set of cards, abstract horses and flames"
+      }
+    },
+    {
+      "date": "2026-03-02",
+      "mood": "X_X",
+      "bodyText": "good concert i will never forget it. ITS JUST LIKE THE JEFF ROSENSTOCK SONG ZOMG",
+      "song": "Ohio Tpke - Jeff Rosenstock",
+      "image": {
+        "hasImage": true,
+        "src": "./imgs/2026-03-02.webp",
+        "alt": "ohio turnpike sign"
+      }
+    },
+    {
+      "date": "2026-03-04",
+      "mood": "",
+      "bodyText": "being with you and not being with you is the only way i have to measure time -&nbsp;Borges. good day 2day",
+      "song": "Fortress - Keep it Together",
+      "image": {
+        "hasImage": true,
+        "src": "./imgs/2026-03-04.webp",
+        "alt": "painted record with many fish"
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "mood": ":~o",
+      "bodyText": "FREE ME FROM HOMEWORK gaah.. its ok everything is beautiful weekend soon",
+      "song": "Before the water rises!! Back but different, moving on and— - Forest Spirit, Sun on Your BackBefore the water rises!! Back but different, moving on and— - Forest Spirit, Sun on Your Back",
+      "image": {
+        "hasImage": true,
+        "src": "./imgs/2026-03-05.webp",
+        "alt": "hope gun shooting myself"
+      }
+    }
+
+
+
+  ]
 }
